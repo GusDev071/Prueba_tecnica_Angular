@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/",
+    "/carousel",
+    "/coupons",
+    "/footer",
+    "/home",
+    "/navbar"
+  ]
+}
