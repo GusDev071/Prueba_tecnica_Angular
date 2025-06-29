@@ -1,0 +1,42 @@
+<!-- Contenedor especial para poner el diseño del gradient -->
+<div class="carousel-bg">
+    <div class="container py-4">    
+        <h1 class="text-center lh-sm display-5 display-md-4 display-lg-3">
+            Unlock the full power of
+        </h1>
+
+        <!-- Se crean las cards para mostrarse 4  -->
+        <ul class="row list-unstyled mt-10 justify-content-center align-items-center" id="lista">
+            <li *ngFor="let marca of marcas | slice:0:4" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 ">
+                <div class="card shadow-sm border-0 h-100 d-flex flex-column" id="card">
+                <!-- Parte superior -->
+                <div class="w-100 d-flex justify-content-center align-items-center" style="background: url('{{marca.imagen_marca}}');  background-size: cover; background-position: center; background-repeat: no-repeat;" id="logo_marca">
+                    <img [src]="marca.logo_marca" alt="{{marca.nombre_marca}}">
+                </div>
+                <!-- Badge amarillo -->
+                <div class="d-flex px-3" style="margin-top: -18px;" id="badge-container">
+                    <span class="badge rounded-pill  text-dark px-3 py-2 d-flex align-items-center shadow-sm" style="font-size: 15px; background-color:#C7EDFF;">
+                     <i class="bi bi-cash"></i>Cashback
+                    </span>
+                </div>
+                <!-- Parte inferior -->
+                <div class="flex-grow-1 d-flex flex-column justify-content-between px-3 pb-1 pt-2" id="card-bottom">
+                    <div>
+                    <div class="fw-semibold text-muted mb-1" id="nombre_marca">
+                        {{ marca.nombre_marca }}
+                    </div>
+                    <div class="fw-bold mb-3" id="promo_marca">
+                        {{ marca.promo_marca }}
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Boton -->
+    <div class="text-center mt-4">
+      <button class="btn btn-primary btn-lg rounded-pill">Link your card  <i class="bi bi-chevron-right"></i></button>
+    </div> 
+    </div>
+</div>

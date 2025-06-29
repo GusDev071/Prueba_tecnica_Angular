@@ -1,0 +1,95 @@
+.carousel-bg {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #020788 0%, #0F27B8 40%, #fff 75%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+@media (max-width: 576px) {
+    .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+h1{
+    color:#fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.bi-cash{
+    margin-right: 5px;
+}
+
+#lista{
+    margin-top: 100px;
+}
+
+#card img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+#card {
+    border-radius: 20px;
+    min-height: 315px;
+    max-height: 315px;
+}
+
+#card img{
+    max-width: 50%;
+    height: auto;
+}
+
+#card-top {
+    background: #f3f4f6; 
+    height: 160px; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+}
+
+#card-bottom{
+    background: #fff; 
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+}
+
+#logo_marca{ 
+    
+    height: 160px; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-primary{
+    background-color: #1434CB;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.btn-primary:hover{
+    background-color: white;
+    border: 1px solid #1434CB;
+    color: #1434CB;
+}
+
+.text-dark .text-muted{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}

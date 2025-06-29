@@ -1,0 +1,28 @@
+.navbar{
+    background-color: transparent;
+}
+
+.btn{
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.btn-outline-secondary{
+    color: gray;
+}
+
+.btn-outline-secondary:hover{
+    color: white;
+}
+
+.btn-success{
+    background-color: #1434CB;
+}
+
+.btn-success:hover{
+    background-color: white;
+    border: 1px solid #1434CB;
+    color: #1434CB;
+}

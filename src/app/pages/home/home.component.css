@@ -1,0 +1,38 @@
+h1{
+    margin-top: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 50px;
+}   
+ .check{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+ }
+
+ td{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ }
+
+span .text-primary{
+    color: #1434CB;
+ }
+
+.btn-primary{
+    background-color: #1434CB;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.btn-primary:hover{
+    background-color: white;
+    border: 1px solid #1434CB;
+    color: #1434CB;
+}
+
+

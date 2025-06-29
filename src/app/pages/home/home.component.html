@@ -1,0 +1,80 @@
+<!-- Se inicia el componente navbar -->
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<!-- Contenedor de este componente -->
+<div class="container py-4">
+  <!-- Titulo -->
+  <h1 class="text-center lh-sm display-6 display-md-5 display-lg-4 px-2">
+    Link your
+    <span class="d-none d-sm-inline">business card<br>to <span class="text-primary">unlock cashback</span> offers</span>
+    <span class="d-inline d-sm-none">business card to <span class="text-primary">unlock cashback</span> offers</span>
+  </h1>
+
+  <!-- Tabla con los checks -->
+  <div class="table-responsive mt-5">
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="text-center fw-semibold">No card linking required</th>
+          <th class="text-center fw-semibold">Link your card to get</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Instant Coupons</td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+        </tr>
+        <tr>
+          <td>Full access to Visa Savings Edge benefits</td>
+          <td></td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+        </tr>
+        <tr>
+          <td>Cashback tracking</td>
+          <td></td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+        </tr>
+        <tr>
+          <td>Merchant location search</td>
+          <td></td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+        </tr>
+        <tr>
+          <td>Cashback offers</td>
+          <td></td>
+          <td class="text-center">
+            <img class="check" src="assets/img/check.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center mt-4">
+      <button class="btn btn-primary btn-lg rounded-pill">Link your card  <i class="bi bi-chevron-right"></i></button>
+  </div>    
+</div>
+<!-- Se inicia la pagina de cupones -->
+<app-coupons></app-coupons>
+<!-- Se inicia el apartado de las cards -->
+<app-carousel></app-carousel>
+<!-- Se inicia el footer -->
+ <footer>
+  <app-footer></app-footer>
+ </footer>
+
+
+

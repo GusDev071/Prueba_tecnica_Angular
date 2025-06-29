@@ -1,0 +1,25 @@
+footer{
+    height: 150px;
+    width: 100%;
+}
+
+.me-3{
+    position: relative;
+    overflow: hidden;
+}
+
+.me-3::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(67, 79, 252);
+    transform: translateX(-101%);
+    transition: transform 0.4s ease;
+}
+
+.me-3:hover::after{
+    transform: translateX(0%);
+}

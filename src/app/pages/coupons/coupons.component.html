@@ -1,0 +1,121 @@
+<div class="container py-4">
+  <!-- Titulo de la seccion -->
+  <h1 class="text-center lh-sm display-5 display-md-4 display-lg-3">
+    Explore Instant Coupons
+  </h1>
+
+  <!-- Lista de categorias -->
+   
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <ng-container *ngFor="let categoria of categorias; let i = index">
+      <button 
+        type="button"
+        class="badge rounded-pill px-4 py-2 fs-6 border-0"
+        [ngClass]="{'bg-dark text-white': selectedIndex === i, 'bg-light text-dark': selectedIndex !== i}"
+        (click)="selectedIndex = i">
+        {{ categoria.nombre_categoria }}
+      </button>
+    </ng-container>
+  </div>
+
+  <!-- Barra de controles -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between mt-5 mb-3 gap-2">
+    <div>
+      <strong>Featured Instant Coupons ({{ marcasFiltradas.length }})</strong>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <!-- Botón vista lista -->
+      <button 
+        class="btn btn-outline-primary p-2"
+        [ngClass]="{'active bg-primary text-white': viewMode === 'list'}"
+        (click)="viewMode = 'list'"
+        title="List view">
+        <i class="bi bi-list-task"></i>
+      </button>
+       <!-- Botón vista grid -->
+      <button 
+        class="btn btn-outline-primary p-2"
+        [ngClass]="{'active bg-primary text-white': viewMode === 'grid'}"
+        (click)="viewMode = 'grid'"
+        title="Grid view">
+        <i class="bi bi-grid"></i>
+      </button>
+      <!-- Select Sort By -->
+      <select class="form-select ms-2" [(ngModel)]="sortBy" id="sortBy">
+            <option value="">Sort By</option>
+            <option value="name">Name</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tarjetas en grid -->
+  <ul *ngIf="viewMode === 'grid'" class="row list-unstyled mt-4">
+        <li *ngFor="let marca of marcasMostradas" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card shadow-sm border-0 h-100 d-flex flex-column" id="card">
+            <!-- Parte superior: imagen con fondo gris -->
+            <div class="w-100 d-flex justify-content-center align-items-center" style="background: #f3f4f6; height: 160px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <img [src]="marca.logo_marca" alt="{{marca.nombre_marca}}">
+            </div>
+            <!-- Badge amarillo -->
+            <div class="d-flex px-3" style="margin-top: -18px;" id="badge-container">
+                <span class="badge rounded-pill  text-dark px-3 py-2 d-flex align-items-center shadow-sm" style="font-size: 15px; background-color: #FFEE9A;">
+                <i class="bi bi-ticket-perforated me-1"></i> Instant Coupon
+                </span>
+            </div>
+            <!-- Parte inferior -->
+            <div class="flex-grow-1 d-flex flex-column justify-content-between px-3 pb-1 pt-2" id="card-bottom">
+                <div>
+                <div class="fw-semibold text-muted mb-1" id="nombre_marca">
+                    {{ marca.nombre_marca }}
+                </div>
+                <div class="fw-bold mb-3" id="promo_marca">
+                    {{ marca.promo_marca }}
+                </div>
+                </div>
+                <button type="button" class="btn btn-link text-start text-decoration-none fw-semibold mt-auto"  id="get-coupon-button">
+                Get Coupon <i class="bi bi-arrow-right text-primary"></i>
+                </button>
+            </div>
+            </div>
+        </li>
+    </ul>
+
+  
+  <ul *ngIf="viewMode === 'list'" class="list-unstyled mt-4">
+        <li *ngFor="let marca of marcasMostradas" class="mb-4">
+            <div class="card shadow-sm border-0 d-flex flex-row align-items-stretch" style="min-height: 170px; border-radius: 20px;">
+            <!-- Imagen -->
+            <div class="d-flex align-items-center justify-content-center" style="background: #f3f4f6; min-width: 160px; max-width: 180px; border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+                <img [src]="marca.logo_marca" alt="{{marca.nombre_marca}}" style="max-height: 80px; max-width: 90%;">
+            </div>
+            <!-- Info -->
+            <div class="flex-grow-1 d-flex flex-column justify-content-between p-4" style="background: #fff; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+                <div>
+                    <!-- Badge amarillo -->
+                <div class="d-flex mb-3"  id="badge-container">
+                    <span class="badge rounded-pill  text-dark px-3 py-2 d-flex align-items-center shadow-sm" style="font-size: 15px; background-color: #FFEE9A;">
+                    <i class="bi bi-ticket-perforated me-1"></i> Instant Coupon
+                    </span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="fw-semibold text-muted me-2" style="font-size: 17px;">{{ marca.nombre_marca }}</span>      
+                </div>
+                <div class="fw-bold mb-3" style="font-size: 18px; line-height: 1.2;">
+                    {{ marca.promo_marca }}
+                </div>
+                </div>
+                <button type="button" class="btn btn-link ps-0 pe-1  text-end text-decoration-none fw-semibold mt-auto" id="get-coupon-button">
+                Get Coupon <i class="bi bi-arrow-right text-primary"></i>
+                </button>
+            </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="text-center mt-5" *ngIf="marcasFiltradas.length > 0">
+        <button type="button" class="btn btn-link text-decoration-none" id="more" (click)="toggleShowAll()">
+            {{ showAll ? 'LESS INSTANT COUPONS' : 'MORE INSTANT COUPONS' }}
+            <i class="bi" [ngClass]="showAll ? 'bi-chevron-up' : 'bi-chevron-right'"></i>
+        </button>
+    </div>
+</div>
